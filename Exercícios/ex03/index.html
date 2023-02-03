@@ -13,5 +13,26 @@
 </head>
 <body>
     <h1>Veja um exemplo de condicional em JavaScript</h1>
+    <h2>Digite seu País de Origem abaixo:</h2>
+    <input type="text" id="lugar">
+    <input type="button" value="Conferir" onclick="conferir()">
+    <div id="res">
+
+    </div>
+    <div id="resp">
+
+    </div>
+
+    <script>
+        var org1 = document.getElementById('lugar')
+        function conferir(org1) {
+            if (org == "Brasil") {
+                res.innerHTML = '<p>Você é brasileiro!</p>'
+            } else {
+                res.innerHTML = '<p>Você é extrangeiro!</p>'
+            }
+        }
+    </script>
+
 </body>
 </html>
