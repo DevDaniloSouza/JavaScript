@@ -19,14 +19,12 @@
     <div id="res">
 
     </div>
-    <div id="resp">
-
-    </div>
 
     <script>
         var org1 = document.getElementById('lugar')
-        function conferir(org1) {
-            if (org == "Brasil") {
+        var res = document.getElementById('res')
+        function conferir() {
+            if (org1.value == "Brasil") {
                 res.innerHTML = '<p>Você é brasileiro!</p>'
             } else {
                 res.innerHTML = '<p>Você é extrangeiro!</p>'
