@@ -14,12 +14,27 @@ header > h1 {
 
 section {
     background-color: white;
-    padding: 25px;
+    padding: 20px;
     margin: auto;
-    height: 400px;
     max-width: 400px;
     border-radius: 15px;
     box-shadow: 0px 0px 15px #0000007c;
+}
+
+div#msg {
+    font-size: 1.6em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+div#img {
+    display: flex;
+}
+
+img {
+    border-radius: 15px;
+    margin: auto;
 }
 
 footer {
