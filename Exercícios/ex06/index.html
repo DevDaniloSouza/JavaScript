@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(121, 176, 194);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            background-color: aliceblue;
+            border-radius: .5rem;
+            padding: 1rem;
+            width: 30rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <section>
+
+        <div>
+            <p>
+                <label for="beg">Início:</label>
+                <input type="number" name="beg" id="ibeg">
+            </p>
+            <p>
+                <label for="end">Fim:</label>
+                <input type="number" name="end" id="iend">
+            </p>
+            <p>
+                <label for="pas">Passo:</label>
+                <input type="number" name="pas" id="ipas">
+            </p>
+            <input type="button" value="Contar" onclick="Contar()">
+        </div>
+        
+        <div id="res"><span><p>Preparando Contagem...</p></span></div>
+
+    </section>
+    <footer>
+        <p>&copy; DevDaniloSouza</p>
+    </footer>
+    <script>
+        function Contar() {
+            var beg = Number(ibeg.value)
+            var end = Number(iend.value)
+            var pas = Number(ipas.value)
+            for (var num = beg; num <= end; num += pas) {
+                res.innerHTML += `${num} `
+            }
+    }
+    </script>
+</body>
+</html>
+    

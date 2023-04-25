@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            background-color: rgb(121, 176, 194);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            background-color: aliceblue;
+            border-radius: .5rem;
+            padding: 1rem;
+            width: 30rem;
+        }
+
+        #ilista {
+            width: 150px;
+        }
+
+        div.div {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Analizador de Números</h1>
+    </header>
+    <section>
+        <div class="div">
+            Número (entre 1 e 100):
+            <input type="number" name="num" id="inum">
+            <input type="button" value="Adicionar" onclick="Adicionar()">
+            <br><select name="lista" id="ilista" size="6"></select>
+            <br><input type="button" value="Finalizar" onclick="Finalizar()">
+        </div>
+        <div id="ires">
+            
+        </div>
+    </section>
+    <footer>
+        <p>&copy; DevDaniloSouza</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
