@@ -11,7 +11,7 @@ let damage = 0
 if (power > def && shield === "Não") {
     damage = power - def
 } else if (power > def && shield === "Sim") {
-    damage = power - def / 2
+    damage = (power - def) / 2
 }
 
 pv -= damage
