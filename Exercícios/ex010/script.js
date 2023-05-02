@@ -21,14 +21,14 @@ do {
                 `Salvar este imóvel? (Sim/Não)\n\nPropietário: ${house.proprietario}\nQuartos: ${house.quarto}\nBanheiros: ${house.banheiro}\nGaragem: ${house.garagem}`
             )
 
-            if (confirm = 'Sim') {
+            if (confirm === 'Sim') {
                 Houses.push(house)
             }
             break
         case '2':
             for (let i = 0; i < Houses.length; i++) {
                 alert(
-                    `Imóvel ` + (i + 1) + `\nPropietário: ${Houses[i].proprietario}\nQuartos: ${Houses[i].quarto}\nBanheiros: ${Houses[i].banheiro}\nGaragem: ${Houses[i].garagem}`
+                    `Imóvel ${i}\nPropietário: ${Houses[i].proprietario}\nQuartos: ${Houses[i].quarto}\nBanheiros: ${Houses[i].banheiro}\nGaragem: ${Houses[i].garagem}`
                 )
             }
             break
