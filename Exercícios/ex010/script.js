@@ -39,4 +39,4 @@ do {
             alert("Opção inválida")
     }
 
-} while (option === '3')
+} while (option != '3')
