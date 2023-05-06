@@ -37,13 +37,14 @@ do {
         let index = prompt('Informe o índice da vaga para inscrição:')
 
         for (let i = 0; i < candidate.length; i++) {
-            
+            jobs[i].candidates.push(candidate)
         }
     }
 
 
     switch (option) {
         case '1':
+            jobList()
             break
         case '2':
             newJob()
@@ -51,6 +52,7 @@ do {
         case '3':
             break
         case '4':
+            newCandidate()
             break
         case '5':
             break
