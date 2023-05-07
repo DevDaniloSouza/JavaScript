@@ -1,6 +1,5 @@
 let option = ''
 let jobs = []
-let candidates = []
 
 do {
     option = prompt(
@@ -15,7 +14,7 @@ do {
     )
 
     function jobList() {
-
+        
     }
 
     function newJob() {
@@ -32,15 +31,19 @@ do {
         }
     }
 
-    function newCandidate() {
-        let candidate = prompt('Informe o nome do candidato:')
-        let index = prompt('Informe o índice da vaga para inscrição:')
+    function viewJob() {
 
-        for (let i = 0; i < candidate.length; i++) {
-            jobs[i].candidates.push(candidate)
-        }
     }
 
+    function newCandidate() {
+        let candidate = prompt('Informe o nome do candidato:')
+        let index = parseFloat(prompt('Informe o índice da vaga para inscrição:'))
+        jobs[index - 1].candidates.push(candidate)
+    }
+
+    function trashJob() {
+
+    }
 
     switch (option) {
         case '1':
@@ -50,11 +53,13 @@ do {
             newJob()
             break
         case '3':
+            viewJob()
             break
         case '4':
             newCandidate()
             break
         case '5':
+            trashJob()
             break
         case '6':
             alert('Encerrando...')
