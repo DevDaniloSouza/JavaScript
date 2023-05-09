@@ -1,3 +1,5 @@
+let jobs = []
+
 function jobList() {
     let list = jobs.reduce(function (text, job, index) {
         text += index + '. '
@@ -11,28 +13,21 @@ function jobList() {
 
 function newJob() {
     let name = prompt('Informe o nome da vaga:')
-    let description = prompt('Informe a descrição ad vaga:')
+    let description = prompt('Informe a descrição da vaga:')
     let data = prompt('Informe a data limite da vaga:')
 
-    let confirm = alert(
-        'Nome: ' + name + '\n' +
-        'Descrição: ' + description + '\n' +
-        'Data limite: ' + data + '\n'
-    )
+    let newJob = {name, description, data, candidates: []}
+    jobs.push(newJob)
 
-    if (confirm) {
-        let newJob = {name, description, data, candidates: []}
-        jobs.push(newJob)
-        alert('Vaga criada!')
-    }
+    alert('Vaga criada!')
 }
 
 function viewJob() {
     let index = prompt('Informe o índice da vaga:')
     let job = jobs[index]
 
-    let candidatesText = candidates.reduce(function (text, candidate) {
-        return text + '/n - ' + candidate
+    let candidatesText = jobs[index].candidates.reduce(function (text, candidate) {
+        return text + '\n - ' + candidate
     }, '')
 
     alert(
@@ -40,9 +35,8 @@ function viewJob() {
         '\nNome: ' + job.name +
         '\nDescrição: ' + job.description +
         '\nData limite: ' + job.data +
-        '\nQuantidade de candidatos: ' +  vaga.candidates.length +
+        '\nQuantidade de candidatos: ' +  job.candidates.length +
         '\nCandidatos: ' + candidatesText
-
     )
 }
 
@@ -51,34 +45,30 @@ function newCandidate() {
     let index = prompt('Informe o índice da vaga para inscrição:')
     let job = jobs[index]
 
-    let confirm = confirm(
-        'Deseja inscrever o candidato ' + candidate + ' na vaga:\n' +
-        'Nome:' + job.name + '\n' +
-        'Descrição: ' + job.description + '\n' +
-        'Data limite: ' + job.data + '\n'
-        )
+    alert(
+    'Deseja inscrever o candidato ' + candidate + ' na vaga:\n' +
+    'Nome: ' + job.name + '\n' +
+    'Descrição: ' + job.description + '\n' +
+    'Data limite: ' + job.data + '\n'
+    )
 
-    if (confirm) {
-        vaga.candidates.push(candidate)
-        alert('Inscrição realizada!')
-    }
+    job.candidates.push(candidate)
+    alert('Inscrição realizada!')
 }
 
 function trashJob() {
     let index = prompt('Informe o índice da vaga que deseja excluir:')
     let job = jobs[index]
 
-    let confirm = confirm(
-        'Deseja excluir esta vaga permanentemente?' +
-        'Nome:' + job.name + '\n' +
+    alert(
+        'Deseja excluir esta vaga permanentemente?\n' +
+        'Nome: ' + job.name + '\n' +
         'Descrição: ' + job.description + '\n' +
         'Data limite: ' + job.data + '\n'
         )
     
-    if (confirm) {
-        jobs.splice(index, 1)
-        alert('Vaga excluída!')
-    }
+    jobs.splice(index, 1)
+    alert('Vaga excluída!')
 }
 
 function menu() {
