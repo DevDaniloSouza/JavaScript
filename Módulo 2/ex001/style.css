@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+div.list {
+    margin-left: 5rem;
+}
