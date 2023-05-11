@@ -5,6 +5,7 @@ function addPlayer() {
 
     let ul = document.getElementById('list')
     let newLi = document.createElement('li')
+    newLi.id = 'player' + number.value
 
     newLi.innerHTML = 'Nome: ' + name.value + '<br>' +
     'Posição: ' + position.value + '<br>' + 'Camisa: ' + number.value
@@ -21,7 +22,13 @@ function addPlayer() {
 }
 
 function remPlayer() {
-    let num = document.getElementById('num')
+    let num = document.getElementById('num').value
+    let playerToRemove = document.getElementById('player' + num)
 
-    
+    confirmation = confirm('Deseja excluir jogador de camisa ' + num + '?')
+
+    if(confirmation) {
+        document.getElementById('list').removeChild(playerToRemove)
+        document.getElementById('num').value = ''
+    }
 }
