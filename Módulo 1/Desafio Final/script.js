@@ -16,8 +16,17 @@ function newJob() {
     let description = prompt('Informe a descrição da vaga:')
     let data = prompt('Informe a data limite da vaga:')
 
-    let newJob = {name, description, data, candidates: []}
-    jobs.push(newJob)
+    question = confirm(
+        'Deseja criar a vaga esta vaga?\n' +
+        'Nome: ' + name + '\n' +
+        'Descrição: ' + description + '\n' +
+        'Data limite: ' + data + '\n'
+    )
+
+    if (question) {
+        let newJob = {name, description, data, candidates: []}
+        jobs.push(newJob)
+    }
 
     alert('Vaga criada!')
 }
@@ -45,30 +54,34 @@ function newCandidate() {
     let index = prompt('Informe o índice da vaga para inscrição:')
     let job = jobs[index]
 
-    alert(
+    question = confirm(
     'Deseja inscrever o candidato ' + candidate + ' na vaga:\n' +
     'Nome: ' + job.name + '\n' +
     'Descrição: ' + job.description + '\n' +
     'Data limite: ' + job.data + '\n'
     )
 
-    job.candidates.push(candidate)
-    alert('Inscrição realizada!')
+    if (question) {
+        job.candidates.push(candidate)
+        alert('Inscrição realizada!')
+    }
 }
 
 function trashJob() {
     let index = prompt('Informe o índice da vaga que deseja excluir:')
     let job = jobs[index]
 
-    alert(
+    question = confirm(
         'Deseja excluir esta vaga permanentemente?\n' +
         'Nome: ' + job.name + '\n' +
         'Descrição: ' + job.description + '\n' +
         'Data limite: ' + job.data + '\n'
         )
-    
-    jobs.splice(index, 1)
-    alert('Vaga excluída!')
+
+    if (question) {
+        jobs.splice(index, 1)
+        alert('Vaga excluída!')
+    }
 }
 
 function menu() {
