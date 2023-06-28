@@ -16,5 +16,16 @@ const median = (...numbers) => {
         return orderedNumbers[middle]
     }
 
-    
+    const firstMedian = orderedNumbers[middle - 1]
+    const secondMedian = orderedNumbers[middle]
+    return average(firstMedian, secondMedian)
+}
+
+const mode = (...numbers) => {
+    const quantities = numbers.map(num => [
+        num,
+        numbers.filter(n => num == n).length
+    ])
+    quantities.sort((a, b) => b[1] - a[1])
+    return quantities[0][0]
 }
