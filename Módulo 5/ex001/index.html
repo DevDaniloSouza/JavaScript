@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de email e senha</title>
+    <script src="index.js" defer></script>
+ </head>
+ <body>
+    <h1>Registre-se</h1>
+    <form>
+        <label for="iname">Nome:</label>
+        <input type="text" name="name" id="iname">
+        <span id="name-error"></span>
+        <br><br>
+        <label for="iemail">Email:</label>
+        <input type="email" name="email" id="iemail">
+        <span id="email-error"></span>
+        <br><br>
+        <label for="ipass">Senha:</label>
+        <input type="password" name="pass" id="ipass">
+        <span id="pass-error"></span>
+        <br><br>
+        <button type="submit">Registrar</button>
+    </form>
+ </body>
+ </html>
