@@ -1,0 +1,29 @@
+function CalculateIMC(weight, height) {
+    return new Promise((resolve, reject) => {
+        if (typeof weight !== 'number' || typeof height !== 'number') {
+            reject("Os dados não são numéricos!")
+        } else {
+            resolve(weight / (height * height))
+        }
+    })
+}
+
+function showImc(weight, height) {
+    CalculateIMC(weight, height).then((result) => {
+        const text = 'Seu IMC é: ' + result
+    
+        if (result < 18.5) console.log(text + ' - Magreza')
+        else if (result < 25) console.log(text + ' - Normal')
+        else if (result < 30) console.log(text + ' - Sobrepeso')
+        else if (result < 40) console.log(text + ' - Obesidade')
+        else console.log(text + ' - Obesidade grave')
+    }).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`)
+    }).finally(() => {
+        console.log("Calculo finalizado!")
+    })
+}
+
+showImc(59, 1.68)
+
+// Meu código...
